@@ -1,18 +1,14 @@
 package edu.icet.ecom.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Setter
+@Getter
 @ToString
 
 public class Product {
-    private String name;
-    private String description;
+    private String title;
     private Double price;
+    private String description;
 
 }
