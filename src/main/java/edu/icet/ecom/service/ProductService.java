@@ -15,8 +15,10 @@ public class ProductService {
     @Autowired
     RestTemplate restTemplate;
 
-    public List<Product> getProducts() {
+    public List<Product> getProducts(String category) {
         Product[] response = restTemplate.getForObject("https://fakestoreapi.com/products", Product[].class);
-        return Arrays.stream(response).toList();
+
+        return Arrays.stream(response).filter(product ->
+                category.equalsIgnoreCase(product.getCategory())).toList();
     }
 }

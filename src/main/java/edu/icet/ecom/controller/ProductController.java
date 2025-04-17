@@ -5,6 +5,7 @@ import edu.icet.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,8 +24,8 @@ public class ProductController {
 //    @RequestMapping(method = RequestMethod.GET)
 
     @GetMapping("get-all")
-    List<Product> getProducts() {
-        List<Product> products = productService.getProducts();
-        return products;
+    List<Product> getProducts(@RequestParam("category") String category) {
+        List<Product> products = productService.getProducts(category);
+        return productService.getProducts(category);
     }
 }
