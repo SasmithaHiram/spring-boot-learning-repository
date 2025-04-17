@@ -22,9 +22,9 @@ public class ProductController {
 //    Old Type
 //    @RequestMapping(method = RequestMethod.GET)
 
-    @GetMapping("all")
+    @GetMapping("get-all")
     List<Product> getProducts() {
         List<Product> products = productService.getProducts();
-        return null;
+        return products;
     }
 }
