@@ -18,6 +18,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public class ProductController {
+
     final ProductService productService;
 
 //    Old Type
