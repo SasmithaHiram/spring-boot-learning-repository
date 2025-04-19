@@ -3,10 +3,7 @@ package edu.icet.ecom.controller;
 import edu.icet.ecom.model.Product;
 import edu.icet.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,10 @@ public class ProductController {
     List<Product> getProducts(@RequestParam("category") String category) {
         List<Product> products = productService.getProducts(category);
         return productService.getProducts(category);
+    }
+
+    @PostMapping("/create")
+    public void createProduct(@RequestBody Product product) {
+        productService.createProduct(product);
     }
 }

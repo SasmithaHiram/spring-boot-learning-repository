@@ -1,5 +1,6 @@
 package edu.icet.ecom.config;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -9,6 +10,11 @@ public class BeanConfig {
     @Bean
     RestTemplate getRestTemplate() {
         return new RestTemplate();
+    }
+
+    @Bean
+    ModelMapper getModelMapper() {
+        return new ModelMapper();
     }
 
 }
