@@ -27,7 +27,7 @@ public class ProductService {
                 category.equalsIgnoreCase(product.getCategory())).toList();
     }
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(cron = "0 0/30 23 L * *")
     public void sendSeasonalGreetings() {
         // Get Customer from DB
         // Get Contact Numbers
