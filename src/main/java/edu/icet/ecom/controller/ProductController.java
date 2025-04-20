@@ -29,6 +29,6 @@ public class ProductController {
 
     @PostMapping("/create")
     public void createProduct(@RequestBody Product product) {
-        productService.createProduct(product);
+
     }
 }
