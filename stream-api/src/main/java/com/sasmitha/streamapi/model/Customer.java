@@ -26,4 +26,12 @@ public class Customer {
     public String getGender() {
         return gender;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }
