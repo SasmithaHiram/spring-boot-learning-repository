@@ -5,8 +5,7 @@ import com.sasmitha.streamapi.model.Customer;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
 
 public class CustomerService {
 
@@ -16,12 +15,14 @@ public class CustomerService {
                 new Customer("Prashansa", "FEMALE"),
                 new Customer("Thakshila", "FEMALE"));
 
-        Set<Customer> collect = customers.stream()
-                .filter(new GenderPredicate())
-                .collect(Collectors.toSet());
+        Predicate<Customer> genderPredicate = customer -> customer.getGender().equalsIgnoreCase("MALE");
 
-        System.out.println(collect);
-
+        List<String> male = customers.stream()
+                .filter(customer -> customer.getGender() != null)
+                .filter(customer -> customer.getGender() != null)
+                .filter(customer -> customer.getGender().equalsIgnoreCase("MALE"))
+                .map(Customer::getName)
+                .toList();
 
         return null;
     }
